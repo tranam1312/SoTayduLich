@@ -203,8 +203,4 @@ public class ContentActivity extends AppCompatActivity {
                 });
         builder.create().show();
     }
-
-
 }
-
-

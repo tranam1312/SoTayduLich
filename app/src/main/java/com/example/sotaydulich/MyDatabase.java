@@ -51,13 +51,13 @@ public class MyDatabase extends SQLiteOpenHelper {
         }
     }
 
-    public boolean updateData(String id, String diadiem, String mota, String uriImg){
+    public boolean updateData(String id, String diadiem, String mota, byte[] bytes){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COL_1, id);
         values.put(COL_2, diadiem);
         values.put(COL_3, mota);
-        values.put(COL_4, uriImg);
+        values.put(COL_4, bytes);
         long result = db.update(TABLE_NAME, values, COL_1 + "=?", new String[]{id});
         if(result == -1){
             return false;
